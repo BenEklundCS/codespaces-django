@@ -71,11 +71,12 @@
 
 
         {% if weather_data %}
-        <div id="weather">
-            <!-- Inject the HTML from the response -->
-            {{ weather_data | safe }}
-        </div>
+            <div id="weather">
+                <!-- Inject the HTML from the response -->
+                {{ weather_data | safe }}
+            </div>
         {% endif %}
+
     </div>
 </body>
 </html>

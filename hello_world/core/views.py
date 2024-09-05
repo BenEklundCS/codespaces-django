@@ -12,5 +12,6 @@ def fun_view(request):
         url = "https://wttr.in/"+city+"?format=%C+%t"  # Return only condition and temperature
         response = requests.get(url) # Get the current temperature in Sacramento
         weather_data = response.text  # Extract temperature as text
+        
     return render(request, 'index.html', {'name': name, 'weather_data': weather_data})
 
