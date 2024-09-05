@@ -1,33 +1,71 @@
-{% load django_browser_reload %}
-{% load static %}
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="GitHub Codespaces ♥️ Django">
-    <meta name="author" content="GitHub Codespaces">
-    <meta name="generator" content="GitHub Codespaces">
-    <meta name="theme-color" content="#000000">
-    <title>{% block title %}{{ title }} | GitHub Codespaces ♥️ Django{% endblock %}</title>
-    
-    <link rel="stylesheet" href="{% static 'main.css' %}">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Fun Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
 
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            color: #555;
+        }
+    </style>
+</head>
 <body>
-    <div class="App">
-        <header class="App-header">
-            <img src="{% static 'Octocat.png' %}" class="App-logo" alt="logo" />
-            <p>
-                GitHub Codespaces <span class="heart">♥️</span> Django
-            </p>
-            <p class="small">
-                Edit <code>hello_world/templates/index.html</code> and see changes live!
-            </p>
-        </header>
+    <div class="container">
+        <h1>Welcome to the Fun Django Page!</h1>
+        <p>This is a simple page rendered in Django. Enjoy playing around with forms and dynamic content!</p>
+
+        <form action="{% url 'fun_view' %}" method="post">
+            {% csrf_token %}
+            <label for="name">Enter your name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Your name here"><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        {% if name %}
+            <h2>Hello, {{ name }}!</h2>
+            <p>Glad to have you here on this fun Django page.</p>
+        {% endif %}
     </div>
 </body>
-
 </html>
