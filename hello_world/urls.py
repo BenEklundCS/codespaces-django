@@ -24,6 +24,7 @@ from hello_world.core import views as core_views
 urlpatterns = [
     #path("", core_views.index),
     path("", core_views.fun_view, name='fun_view'),  # Root URL, linking to fun_view
+    path("info/", core_views.info_view, name='info_view'),
     path("admin/", admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
 ]

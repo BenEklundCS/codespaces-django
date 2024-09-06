@@ -15,3 +15,6 @@ def fun_view(request):
         
     return render(request, 'index.html', {'name': name, 'weather_data': weather_data})
 
+def info_view(request):
+    return render(request, 'info.html')
+

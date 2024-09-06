@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <title>Info</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,35 +51,11 @@
             color: #555;
         }
     </style>
+
 </head>
+
 <body>
     <div class="container">
-        <h1>Welcome to my simple weather app!</h1>
-        <p>This is a simple page rendered in Django. Enjoy playing around with forms and dynamic content!</p>
-
-        <form action="{% url 'fun_view' %}" method="post">
-            {% csrf_token %}
-            <label for="name">Enter your name:</label><br>
-            <input type="text" id="name" name="name" placeholder="Your name here"><br>
-            <label for="name">Enter your city:</label><br>
-            <input type="text" id="city" name="city" placeholder="Your city here"><br>
-            <input type="submit" value="Submit">
-        </form>
-
-        {% if name %}
-            <h2>Hello, {{ name }}!</h2>
-            <p>Glad to have you here on this fun Django page.</p>
-        {% endif %}
-
-
-        {% if weather_data %}
-            <div id="weather">
-                <!-- Inject the HTML from the response -->
-                {{ weather_data | safe }}
-            </div>
-        {% endif %}
-
-        <a href="{% url 'info_view' %}" class="button">Go to Info Page</a>
+        Info page!
     </div>
 </body>
-</html>
