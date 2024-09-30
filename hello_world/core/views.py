@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from ..models import RequestRecord
 import requests
+from datetime import datetime
 
 def fun_view(request):
     name = None
@@ -18,7 +19,8 @@ def fun_view(request):
         RequestRecord.objects.create(
             name = name,
             city = city,
-            temperature = temperature
+            temperature = temperature,
+            timestamp = datetime.now()
         )
         
     return render(request, 'index.html', {'name': name, 'weather_data': temperature})
