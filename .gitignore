@@ -3,3 +3,5 @@ __pycache__/
 staticfiles/
 .env
 venv/
+.pg_service.conf
+.my_pgpass

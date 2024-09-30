@@ -53,7 +53,7 @@
 <body>
     <div class="container">
         <h1>Welcome to my simple weather app!</h1>
-        <p>This is a simple page rendered in Django. Enjoy playing around with forms and dynamic content!</p>
+        <p>This is a simple page rendered in Django.</p>
 
         <form action="{% url 'fun_view' %}" method="post">
             {% csrf_token %}
@@ -66,7 +66,7 @@
 
         {% if name %}
             <h2>Hello, {{ name }}!</h2>
-            <p>Glad to have you here on this fun Django page.</p>
+            <p>Here's the current temperature:</p>
         {% endif %}
 
 
